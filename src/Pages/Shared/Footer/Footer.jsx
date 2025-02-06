@@ -1,4 +1,4 @@
-import { FaGithub, FaLinkedin, FaEnvelope, FaFacebook } from "react-icons/fa";
+import { FaGithub, FaLinkedin, FaEnvelope, FaFacebook, FaTwitter } from "react-icons/fa";
 
 const Footer = () => {
   return (
@@ -45,6 +45,14 @@ const Footer = () => {
             className="hover:scale-110 transition-transform duration-300"
           >
             <FaFacebook className="w-8 h-8 text-gray-300 hover:text-white" />
+          </a>
+          <a
+            href="https://x.com/smmaksudulhaque"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="hover:scale-110 transition-transform duration-300"
+          >
+            <FaTwitter className="w-8 h-8 text-gray-300 hover:text-white" />
           </a>
         </div>
 

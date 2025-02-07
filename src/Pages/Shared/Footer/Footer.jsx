@@ -1,10 +1,15 @@
-import { FaGithub, FaLinkedin, FaEnvelope, FaFacebook, FaTwitter } from "react-icons/fa";
+import {
+  FaGithub,
+  FaLinkedin,
+  FaEnvelope,
+  FaFacebook,
+  FaTwitter,
+} from "react-icons/fa";
 
 const Footer = () => {
   return (
     <footer className="bg-gradient-to-r from-gray-800 via-gray-900 to-black text-white py-10">
       <div className="container mx-auto text-center">
-        {/* Title */}
         <h3 className="text-2xl font-bold mb-4 animate-fade-in">
           Thank you for visiting!
         </h3>
@@ -12,7 +17,6 @@ const Footer = () => {
           © 2025 Maksudul's Dev World. All rights reserved.
         </p>
 
-        {/* Social Icons */}
         <div className="flex justify-center space-x-6">
           <a
             href="https://github.com/smmaksudulhaque2000"
@@ -56,7 +60,6 @@ const Footer = () => {
           </a>
         </div>
 
-        {/* Footer Animation */}
         <div className="mt-6 animate-bounce">
           <p className="text-sm text-gray-500">"Keep coding, keep growing!"</p>
         </div>

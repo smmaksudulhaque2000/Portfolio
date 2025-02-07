@@ -8,19 +8,20 @@ const EducationalQualification = () => {
       <motion.h3
         className="text-4xl md:text-5xl font-bold text-center mb-12"
         initial={{ opacity: 0, y: -50 }}
-        animate={{ opacity: 1, y: 0 }}
+        whileInView={{ opacity: 1, y: 0 }}
         transition={{ duration: 1 }}
+        viewport={{ once: true }}
       >
         Educational Qualifications
       </motion.h3>
 
       <div className="grid md:grid-cols-2 gap-12">
-        {/* Higher Secondary Certificate */}
         <motion.div
           className="bg-gray-700 p-8 rounded-lg shadow-2xl hover:shadow-3xl transition-all duration-300"
-          initial={{ opacity: 0, y: 50 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 1 }}
+          initial={{ opacity: 0, scale: 0.8 }}
+          whileInView={{ opacity: 1, scale: 1 }}
+          transition={{ duration: 0.8 }}
+          viewport={{ once: true }}
         >
           <h4 className="text-2xl font-semibold text-blue-400 mb-4">
             <IoSchoolSharp className="inline-block mr-3 text-3xl" />
@@ -43,12 +44,12 @@ const EducationalQualification = () => {
           </p>
         </motion.div>
 
-        {/* Honours 3rd Year */}
         <motion.div
           className="bg-gray-700 p-8 rounded-lg shadow-2xl hover:shadow-3xl transition-all duration-300"
-          initial={{ opacity: 0, y: 50 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 1, delay: 0.2 }}
+          initial={{ opacity: 0, x: 100 }}
+          whileInView={{ opacity: 1, x: 0 }}
+          transition={{ duration: 1 }}
+          viewport={{ once: true }}
         >
           <h4 className="text-2xl font-semibold text-blue-400 mb-4">
             <FaUniversity className="inline-block mr-3 text-3xl" />

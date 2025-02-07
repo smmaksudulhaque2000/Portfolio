@@ -1,6 +1,6 @@
 import { motion } from "framer-motion";
 import { Typewriter } from "react-simple-typewriter";
-import img from "../../assets/img.svg"; // তোমার প্রোফাইল ইমেজ
+import img from "../../assets/img.svg";
 import {
   FaGithub,
   FaLinkedin,
@@ -24,7 +24,6 @@ const Banner = () => {
       id="home"
       className="flex flex-col-reverse md:flex-row items-center justify-between py-16 px-8 bg-gradient-to-r from-gray-800 via-gray-900 to-black text-white"
     >
-      {/* Left Section: Profile Information */}
       <motion.div
         className="md:w-2/3 text-center md:text-left"
         initial={{ opacity: 0, x: -100 }}
@@ -44,7 +43,6 @@ const Banner = () => {
               "💻 Frontend Developer | Designing Beautiful, Responsive User Interfaces",
               "⚙️ Crafting Seamless Digital Experiences with Code",
               "🚀 Tech Enthusiast | Constantly Learning, Evolving, and Innovating",
-
             ]}
             loop
             cursor
@@ -61,16 +59,16 @@ const Banner = () => {
         </p>
         <hr className="my-5 border-2 text-gray-500" />
         <div className="grid lg:grid-cols-2 gap-8">
-        <Link
-    to="contact"
-    spy={true}
-    smooth={true}
-    duration={1000}
-    offset={-70}
-    className="text-center px-10 py-4 bg-blue-500 text-white text-lg font-semibold rounded-lg shadow-lg hover:bg-blue-700 transition-transform transform hover:scale-105 cursor-pointer"
-  >
-    Contact Me
-  </Link>
+          <Link
+            to="contact"
+            spy={true}
+            smooth={true}
+            duration={1000}
+            offset={-70}
+            className="text-center px-10 py-4 bg-blue-500 text-white text-lg font-semibold rounded-lg shadow-lg hover:bg-blue-700 transition-transform transform hover:scale-105 cursor-pointer"
+          >
+            Contact Me
+          </Link>
           <motion.button
             onClick={handleResumeDownload}
             className="text-center px-10 py-4 bg-green-500 text-white text-lg font-semibold rounded-lg shadow-lg hover:bg-green-700 transition-transform transform hover:scale-105"
@@ -81,7 +79,6 @@ const Banner = () => {
         </div>
       </motion.div>
 
-      {/* Right Section: Profile Image */}
       <motion.div
         className="md:w-1/3 flex justify-end mb-12 md:mb-0"
         initial={{ opacity: 0, x: 100 }}

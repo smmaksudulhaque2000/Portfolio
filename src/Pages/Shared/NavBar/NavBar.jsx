@@ -45,7 +45,6 @@ const NavBar = () => {
           <span className="text-2xl font-bold">Maksudul Haque</span>
         </div>
 
-        {/* Large Screen Menu */}
         <div className="hidden md:flex space-x-8 text-lg">
           {menuItems.map((item) => (
             <Link
@@ -56,7 +55,9 @@ const NavBar = () => {
               duration={500}
               offset={-70}
               className={`cursor-pointer transition hover:text-green-400 ${
-                activeSection === item.id ? "text-green-400 font-semibold border-b-2 border-green-400" : ""
+                activeSection === item.id
+                  ? "text-green-400 font-semibold border-b-2 border-green-400"
+                  : ""
               }`}
             >
               {item.label}
@@ -64,7 +65,6 @@ const NavBar = () => {
           ))}
         </div>
 
-        {/* Hamburger Menu */}
         <div className="md:hidden">
           <button onClick={toggleMenu}>
             {isOpen ? (
@@ -76,7 +76,6 @@ const NavBar = () => {
         </div>
       </div>
 
-      {/* Mobile Menu */}
       <div
         className={`md:hidden overflow-hidden transition-all duration-500 ease-in-out ${
           isOpen ? "max-h-96 opacity-100" : "max-h-0 opacity-0"
@@ -92,7 +91,9 @@ const NavBar = () => {
               duration={500}
               offset={-70}
               className={`block py-2 cursor-pointer transition hover:text-green-400 ${
-                activeSection === item.id ? "text-green-400 font-semibold border-b-2 border-green-400" : ""
+                activeSection === item.id
+                  ? "text-green-400 font-semibold border-b-2 border-green-400"
+                  : ""
               }`}
               onClick={() => setIsOpen(false)}
             >

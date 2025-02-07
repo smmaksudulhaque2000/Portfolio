@@ -131,7 +131,7 @@ const Projects = () => {
             transition={{ duration: 1, delay: index * 0.2 }}
           >
             <div className="w-full ">
-              <img src={project.image} alt="Project ScreenShort"/>
+              <img src={project.image} alt="Project ScreenShort" />
             </div>
             <h4 className="text-2xl font-semibold text-blue-400 m-4">
               {project.name}

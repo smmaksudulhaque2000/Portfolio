@@ -1,10 +1,11 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { Menu, X, Code } from "lucide-react";
 import { Link } from "react-scroll";
 
 const NavBar = () => {
   const [isOpen, setIsOpen] = useState(false);
-  
+  const [activeSection, setActiveSection] = useState("home");
+
   const toggleMenu = () => setIsOpen(!isOpen);
 
   const menuItems = [
@@ -16,6 +17,25 @@ const NavBar = () => {
     { id: "projects", label: "Projects" },
     { id: "contact", label: "Contact" },
   ];
+
+  useEffect(() => {
+    const handleScroll = () => {
+      let currentSection = "home";
+      menuItems.forEach((item) => {
+        const section = document.getElementById(item.id);
+        if (section) {
+          const rect = section.getBoundingClientRect();
+          if (rect.top <= 150 && rect.bottom >= 150) {
+            currentSection = item.id;
+          }
+        }
+      });
+      setActiveSection(currentSection);
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
 
   return (
     <nav className="bg-gradient-to-r from-gray-800 via-gray-900 to-black text-white sticky top-0 z-50 shadow-lg">
@@ -31,12 +51,13 @@ const NavBar = () => {
             <Link
               key={item.id}
               to={item.id}
-              spy={true}               // Track active section
+              spy={true}
               smooth={true}
               duration={500}
               offset={-70}
-              activeClass="text-green-400 font-semibold border-b-2 border-green-400"
-              className="cursor-pointer transition hover:text-green-400"
+              className={`cursor-pointer transition hover:text-green-400 ${
+                activeSection === item.id ? "text-green-400 font-semibold border-b-2 border-green-400" : ""
+              }`}
             >
               {item.label}
             </Link>
@@ -70,8 +91,9 @@ const NavBar = () => {
               smooth={true}
               duration={500}
               offset={-70}
-              activeClass="text-green-400 font-semibold border-b-2 border-green-400"
-              className="block py-2 cursor-pointer transition hover:text-green-400"
+              className={`block py-2 cursor-pointer transition hover:text-green-400 ${
+                activeSection === item.id ? "text-green-400 font-semibold border-b-2 border-green-400" : ""
+              }`}
               onClick={() => setIsOpen(false)}
             >
               {item.label}

@@ -1,17 +1,11 @@
 import { useState } from "react";
 import { Menu, X, Code } from "lucide-react";
+import { Link } from "react-scroll";
 
 const NavBar = () => {
   const [isOpen, setIsOpen] = useState(false);
-  const [activeItem, setActiveItem] = useState("home");
-
-  const toggleMenu = () => {
-    setIsOpen(!isOpen);
-  };
-
-  const handleItemClick = (item) => {
-    setActiveItem(item);
-  };
+  
+  const toggleMenu = () => setIsOpen(!isOpen);
 
   const menuItems = [
     { id: "home", label: "Home" },
@@ -26,7 +20,6 @@ const NavBar = () => {
   return (
     <nav className="bg-gradient-to-r from-gray-800 via-gray-900 to-black text-white sticky top-0 z-50 shadow-lg">
       <div className="container mx-auto flex items-center justify-between py-4 px-6">
-        {/* Logo and Name */}
         <div className="flex items-center space-x-3">
           <Code className="w-8 h-8 text-green-400" />
           <span className="text-2xl font-bold">Maksudul Haque</span>
@@ -35,22 +28,22 @@ const NavBar = () => {
         {/* Large Screen Menu */}
         <div className="hidden md:flex space-x-8 text-lg">
           {menuItems.map((item) => (
-            <a
+            <Link
               key={item.id}
-              href={`#${item.id}`}
-              onClick={() => handleItemClick(item.id)}
-              className={`transition ${
-                activeItem === item.id
-                  ? "text-green-400 font-semibold"
-                  : "hover:text-green-400"
-              }`}
+              to={item.id}
+              spy={true}               // Track active section
+              smooth={true}
+              duration={500}
+              offset={-70}
+              activeClass="text-green-400 font-semibold border-b-2 border-green-400"
+              className="cursor-pointer transition hover:text-green-400"
             >
               {item.label}
-            </a>
+            </Link>
           ))}
         </div>
 
-        {/* Hamburger Menu for Small Screens */}
+        {/* Hamburger Menu */}
         <div className="md:hidden">
           <button onClick={toggleMenu}>
             {isOpen ? (
@@ -62,7 +55,7 @@ const NavBar = () => {
         </div>
       </div>
 
-      {/* Mobile Menu with Active State and Animation */}
+      {/* Mobile Menu */}
       <div
         className={`md:hidden overflow-hidden transition-all duration-500 ease-in-out ${
           isOpen ? "max-h-96 opacity-100" : "max-h-0 opacity-0"
@@ -70,21 +63,19 @@ const NavBar = () => {
       >
         <div className="bg-gray-900 text-center py-4">
           {menuItems.map((item) => (
-            <a
+            <Link
               key={item.id}
-              href={`#${item.id}`}
-              onClick={() => {
-                handleItemClick(item.id);
-                setIsOpen(false); // Close menu after selection
-              }}
-              className={`block py-2 transition ${
-                activeItem === item.id
-                  ? "text-green-400 font-semibold"
-                  : "hover:text-green-400"
-              }`}
+              to={item.id}
+              spy={true}
+              smooth={true}
+              duration={500}
+              offset={-70}
+              activeClass="text-green-400 font-semibold border-b-2 border-green-400"
+              className="block py-2 cursor-pointer transition hover:text-green-400"
+              onClick={() => setIsOpen(false)}
             >
               {item.label}
-            </a>
+            </Link>
           ))}
         </div>
       </div>

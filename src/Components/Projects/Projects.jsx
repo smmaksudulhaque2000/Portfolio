@@ -186,19 +186,19 @@ const Projects = () => {
                 controls
               />
             </div>
-            <h4 className="text-3xl font-extrabold text-blue-700 mb-4">
+            <h4 className="text-xl lg:text-3xl font-extrabold text-blue-700 lg:mb-4">
               {selectedProject.name}
             </h4>
-            <p className="text-gray-700 leading-relaxed text-lg mb-4">
+            <p className="text-gray-700 leading-relaxed text-sm lg:text-lg lg:mb-4">
               {selectedProject.description}
             </p>
-            <div className="text-gray-800 font-semibold text-xl mb-6 flex flex-col sm:flex-row items-center gap-6 bg-gray-100 p-5 rounded-lg shadow-lg transition-all duration-300 hover:scale-105 hover:shadow-xl">
-              <span className="text-blue-600 text-2xl">🚀 Tech Stack:</span>
-              <div className="flex flex-wrap gap-6 animate-fadeIn">
+            <div className="text-gray-800 font-semibold text-xl lg:mb-6 flex flex-col sm:flex-row items-center gap-6 bg-gray-100 lg:p-5 rounded-lg shadow-lg transition-all duration-300 hover:scale-105 hover:shadow-xl">
+              <span className="text-blue-600 lg:text-2xl">🚀 Tech Stack:</span>
+              <div className="flex flex-wrap gap-2 lg:gap-6 animate-fadeIn">
                 {selectedProject.techStack.map((Icon, index) => (
                   <Icon
                     key={index}
-                    className={`text-4xl transition-transform duration-300 hover:scale-125 ${
+                    className={`text-2xl lg:text-4xl transition-transform duration-300 hover:scale-125 ${
                       colors[Icon.name] || "text-gray-800"
                     }`}
                   />
@@ -206,21 +206,21 @@ const Projects = () => {
               </div>
             </div>
 
-            <div className="py-6 bg-gray-100 p-6 rounded-xl shadow-lg transition-all duration-300 hover:scale-105 hover:shadow-xl">
-              <p className="text-xl font-bold text-red-600 mb-2 animate-fadeIn">
+            <div className="py-1 lg:py-6 bg-gray-100 p-6 rounded-xl shadow-lg transition-all duration-300 hover:scale-105 hover:shadow-xl">
+              <p className="lg:text-xl font-bold text-red-600 lg:mb-2 animate-fadeIn">
                 💪 Challenges:
               </p>
-              <p className="text-lg text-gray-800 mb-4 animate-slideIn">
+              <p className="lg:text-lg text-gray-800 mb-4 animate-slideIn">
                 {selectedProject.challenges}
               </p>
-              <p className="text-xl font-bold text-green-600 mb-2 animate-fadeIn">
+              <p className="lg:text-xl font-bold text-green-600 lg:mb-2 animate-fadeIn">
                 🌱 Future Plans:
               </p>
-              <p className="text-lg text-gray-800 animate-slideIn">
+              <p className="lg:text-lg text-gray-800 animate-slideIn">
                 {selectedProject.futurePlans}
               </p>
             </div>
-            <div className="flex justify-center gap-6 mt-5">
+            <div className="flex justify-center gap-6 mt-2 lg:mt-5">
               <a
                 href={selectedProject.liveLink}
                 className="flex items-center gap-2 bg-gradient-to-r from-yellow-400 to-orange-500 text-white py-2 px-4 rounded-full text-lg font-semibold hover:scale-105 transition-transform"

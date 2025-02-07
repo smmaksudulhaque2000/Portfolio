@@ -8,6 +8,7 @@ import {
   FaFacebook,
   FaTwitter,
 } from "react-icons/fa";
+import { Link } from "react-scroll";
 
 const Banner = () => {
   const handleResumeDownload = () => {
@@ -33,12 +34,17 @@ const Banner = () => {
         <h1 className="text-2xl md:text-5xl font-extrabold text-white mb-6">
           Hi, I'm Maksudul Haque
         </h1>
-        <h2 className="text-2xl md:text-3xl text-blue-300 mb-8">
+        <h2 className="text-2xl md:text-4xl font-bold text-blue-300 mb-8">
           <Typewriter
             words={[
               "👨‍💻 Full-Stack Web Developer",
               "🚀 Passionate About Innovation & Impactful Coding",
+              "🎯 Focused on Delivering High-Performance Web Applications",
               "🌍 Crafting Scalable, User-Centric Solutions",
+              "💻 Frontend Developer | Designing Beautiful, Responsive User Interfaces",
+              "⚙️ Crafting Seamless Digital Experiences with Code",
+              "🚀 Tech Enthusiast | Constantly Learning, Evolving, and Innovating",
+
             ]}
             loop
             cursor
@@ -53,14 +59,18 @@ const Banner = () => {
           building scalable and efficient web applications that make a
           difference.
         </p>
+        <hr className="my-5 border-2 text-gray-500" />
         <div className="grid lg:grid-cols-2 gap-8">
-          <motion.a
-            href="#contact"
-            className="text-center px-10 py-4 bg-blue-500 text-white text-lg font-semibold rounded-lg shadow-lg hover:bg-blue-700 transition-transform transform hover:scale-105"
-            whileHover={{ scale: 1.1 }}
-          >
-            Contact Me
-          </motion.a>
+        <Link
+    to="contact"
+    spy={true}
+    smooth={true}
+    duration={1000}
+    offset={-70}
+    className="text-center px-10 py-4 bg-blue-500 text-white text-lg font-semibold rounded-lg shadow-lg hover:bg-blue-700 transition-transform transform hover:scale-105 cursor-pointer"
+  >
+    Contact Me
+  </Link>
           <motion.button
             onClick={handleResumeDownload}
             className="text-center px-10 py-4 bg-green-500 text-white text-lg font-semibold rounded-lg shadow-lg hover:bg-green-700 transition-transform transform hover:scale-105"
@@ -84,7 +94,7 @@ const Banner = () => {
           className="w-80 h-80 md:w-96 md:h-96 object-cover rounded-full shadow-2xl border-4 border-blue-500"
         />
       </motion.div>
-      <div className="grid gap-5 p-5">
+      <div className="grid grid-flow-col lg:grid-flow-row gap-5 p-5">
         <a
           href="https://github.com/smmaksudulhaque2000"
           target="_blank"

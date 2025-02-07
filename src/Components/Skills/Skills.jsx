@@ -29,6 +29,7 @@ const skillsData = [
       { name: "Git", icon: <FaGitAlt className="text-red-500 text-5xl" /> },
       { name: "VSCode", icon: <FaCode className="text-blue-400 text-5xl" /> },
       { name: "Postman", icon: <SiPostman className="text-orange-500 text-5xl" /> },
+      { name: "Database", icon: <FaDatabase className="text-green-600 text-5xl" /> },
     ],
   },
 ];
